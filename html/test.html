@@ -1,0 +1,102 @@
+<h1>************************** 题目一 **************************</h1>
+<html>
+<head>
+<style>
+  body > div {
+    width: 100px;
+    height: 100px;
+    background: green;
+    display: flex;
+  }
+
+  .test1 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .test2 {
+    margin: auto;
+    position: fixed;    
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+  
+  }
+
+  .test3 {
+    width: 0px !important;
+    height: 0px !important;
+    border-left: 50px solid black;
+    border-top: 50px solid transparent !important;
+    border-bottom: 50px solid transparent !important;
+    border-right: 50px solid transparent !important;
+    
+  }
+</style>
+</head>
+
+<body>
+  <h2>题目1、将方块内的文字 水平+垂直居中</h2>
+  <div class="test1">文字居中</div>
+  <h2>题目2、将方块在整个页面中 水平+垂直居中</h2>
+  <div class="test2"></div>
+  <h2>题目3、将方块实现成一个三角形</h2>
+  <div class="test3">1</div>
+</body>
+</html>
+
+
+
+
+<h1>************************** 题目二 **************************</h1>
+<script type="text/javascript">
+    // 题目2：解析一个 URL 里的参数部分，返回一个对象
+    function getUrlParams(url) {
+      let obj = {};
+      let paramStr = url.split('?')[1];
+      paramsArray = paramStr.split('&');
+      paramsArray.forEach(paramStr => {
+        let param = paramStr.split('=')
+        obj[param[0]] = param[1];
+      })
+        return obj;
+    }
+
+    // 以下例子输出为 { a: 'a', b: '', c: '3' }
+    console.log(getUrlParams('https://ltl.huolala.cn/#/?a=a&b=&c=3'));
+</script>
+
+
+
+<h1>************************** 题目三 **************************</h1>
+<script type="text/javascript">
+    // 实现根据输入数值，输出格式化时间显示；显示如下console所示。
+    function formatSecond(value) {
+      
+      let hour = value / 3600;
+      let min = (value % 3600) / 60;
+      let array = [];
+      let map = new Map();
+      let arr = []
+      array.forEach(item => {
+
+        arr.push(item)
+
+        
+      })
+      array. "[object Array]"
+      let sec = (value % 60);
+      let hourStr = hour ? `${hour}小时` : ``;
+      let minStr = min ? `${min}分钟` : `00分钟`;
+      let secStr = sec ? `${sec}秒` : `00秒`;
+      let result = ``;
+      if(value > 3600) return hourStr + minStr + secStr;
+      else if( value > 60) return minStr + secStr;
+      else return secStr;
+    }
+
+    console.log(formatSecond(59)); // 59秒
+    console.log(formatSecond(60)); // 1分00秒
+    console.log(formatSecond(3601)); // 1小时00分01秒
+</script>

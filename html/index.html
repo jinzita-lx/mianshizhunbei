@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <script src="../debounce.js"></script>
+  <div class="cube"></div>
+  <input value="123" oninput="debounce(() => {
+    console.log(this.value);
+  },1000)">
+  
+<style>
+.cube{
+  width: calc(100% - 100px);
+  margin: 0 50px;
+  background: antiquewhite;
+  height: calc(100vw - 100px);
+}
+</style>
+</body>
+</html>
