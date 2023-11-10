@@ -7,3 +7,12 @@ Array.prototype.MyMap = function MyMap(callbackFn, thisArg) {
   return result;
 }
 
+let obj = {
+  0: "one",
+  1: "two",
+  length: 2,
+}
+let arr = Array.from(obj)
+for(const el of arr) {
+  console.log(el);
+}

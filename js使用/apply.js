@@ -1,7 +1,14 @@
+// Function.prototype.MyApply = function (thisArg, args) {
+//   const context = thisArg;
+//   context.fn = this;
+//   let res = context.fn(...args);
+//   delete context.fn;
+//   return res;
+// }
 Function.prototype.MyApply = function (thisArg, args) {
-  const context = thisArg;
+  const context = thisArg
   context.fn = this;
-  let res = context.fn(...args);
+  const res = context.fn(...args);
   delete context.fn;
   return res;
 }
@@ -18,5 +25,5 @@ let person = {
     console.log(word);
   }
 }
-obj.fn.apply(person, ['Hi']);
+obj.fn.apply(person, ['hello']);
 obj.fn.MyApply(person, ["hello"]);
