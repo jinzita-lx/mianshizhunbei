@@ -1,3 +1,10 @@
+/**
+ * deepClone 深拷贝
+ * @author jinzita-lx
+ * @param {*} obj 
+ * @param {*} map 
+ * @returns 
+ */
 function deepClone (obj, hash = new WeakMap()) {
   if(obj == null) return obj;
   if(obj instanceof Date) return new Date(obj);
@@ -13,7 +20,6 @@ function deepClone (obj, hash = new WeakMap()) {
   }
   return cloneObj;
 }
-
 function deepClone (obj, map = new WeakMap()) {
   if(obj == null) return obj;
   if(obj instanceof Date) return new Date(obj);
@@ -29,13 +35,19 @@ function deepClone (obj, map = new WeakMap()) {
   }
 }
 
-let obj = {
+/**
+ * Test
+ */
+const objOrigin = {
   name:'lll',
   child: {
     name: '222',
   }
 }
-obj.child.child = obj;
+objOrigin.child.child = objOrigin;
 
+const obj = deepClone(objOrigin);
+
+
+console.log(objOrigin);
 console.log(obj);
-console.log(deepClone(obj));
