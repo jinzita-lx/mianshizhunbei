@@ -1,25 +1,23 @@
-function debounce(fn, delay) {
-  delay = delay ?? 1000;
+/**
+ * debounce
+ * @param {*} fn 
+ * @param {*} delay 
+ * @returns 
+ */
+function debounce(fn, delay = 1000) {
   let timer;
-  return function () {
-    const context = this, args = arguments;
+  return function (...args) {
+    const context = this;
     if(timer) clearTimeout(timer);
-    timer = null;
     timer = setTimeout(() => {
       fn.apply(context, args);
     }, delay);
   }
 }
-function myDebounde (fn, delay = 1000) {
-  let timer;
-  return function (...args) {
-    const context = this
-    if(timer) clearTimeout(timer)
-    timer = setTimeout(() => {
-      fn.apply(context, args)
-    }, delay)
-  }
-}
+/**
+ * Text
+ * @param {*} a 
+ */
 function loga (a) {
   console.log(a);
 }
