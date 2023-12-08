@@ -1,14 +1,13 @@
-// Function.prototype.MyApply = function (thisArg, args) {
-//   const context = thisArg;
-//   context.fn = this;
-//   let res = context.fn(...args);
-//   delete context.fn;
-//   return res;
-// }
+/**
+ * Function.prototype.apply 实现
+ * @param {*} thisArg 
+ * @param {*} args 
+ * @returns 
+ */
 Function.prototype.MyApply = function (thisArg, args) {
-  const context = thisArg
+  const context = thisArg;
   context.fn = this;
-  const res = context.fn(...args);
+  let res = context.fn(...args);
   delete context.fn;
   return res;
 }

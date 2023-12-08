@@ -1,3 +1,9 @@
+/**
+ * Function.prototype.bind 实现
+ * @param {*} context 
+ * @param  {...any} args 
+ * @returns 
+ */
 Function.prototype.MyBind = function(context, ...args) {
   const self = this;
   const bound = function() {
